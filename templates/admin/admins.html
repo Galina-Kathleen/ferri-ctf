@@ -3,7 +3,7 @@
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
-    <h1 style="margin:0;">🛡️ Manage Administrators</h1>
+    <h1 style="margin:0;">Manage Administrators</h1>
     <div class="hint">Ferris operator controls to grant or revoke administrative access.</div>
   </div>
   <div>
@@ -13,7 +13,7 @@
 
 <div class="grid-2">
   <div class="card">
-    <h2>➕ Grant Admin Access</h2>
+    <h2>Grant Admin Access</h2>
     <p class="hint">Enter the username (college ID) of an existing registered user to promote them to administrator.</p>
     <form method="post" action="/admin/admins/add">
       <input type="hidden" name="csrf_token" value="{{ csrf_token }}">

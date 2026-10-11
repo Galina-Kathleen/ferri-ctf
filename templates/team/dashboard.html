@@ -6,9 +6,9 @@
     <h1 style="margin:0;">{{ team.name }}</h1>
     <div style="margin-top:0.35rem;">
       {% if team.is_locked %}
-        <span class="badge locked">🔒 Team Locked</span>
+        <span class="badge locked">Team Locked</span>
       {% else %}
-        <span class="badge easy">🔓 Open for Teammate</span>
+        <span class="badge easy">Open for Teammate</span>
       {% endif %}
       {% if active_round %}
         <span class="badge medium" style="margin-left:0.5rem;">Round {{ active_round.round_number }} Active</span>
@@ -20,7 +20,7 @@
   <div style="text-align:right;">
     <div class="hint">Invite Code</div>
     <div class="code-box" id="join-code" title="Click to copy" onclick="navigator.clipboard.writeText('{{ team.join_code }}');alert('Copied to clipboard!');" style="cursor:pointer;">
-      {{ team.join_code }} 📋
+      {{ team.join_code }}
     </div>
   </div>
 </div>
@@ -44,7 +44,7 @@
 
 <div class="grid-2">
   <div class="card">
-    <h2>👥 Team Roster ({{ members | length }}/2)</h2>
+    <h2>Team Roster ({{ members | length }}/2)</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -111,7 +111,7 @@
 
   <div class="card">
     {% if not team.is_locked and is_captain %}
-    <h2>✏️ Rename Team</h2>
+    <h2>Rename Team</h2>
     <form method="post" action="/team/rename">
       <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
       <label for="name">New Team Name</label>
@@ -119,7 +119,7 @@
       <button type="submit">Update Name</button>
     </form>
     {% else %}
-    <h2>🎯 Quick Links</h2>
+    <h2>Quick Links</h2>
     <p>Challenges for the active round can be found on the challenge board.</p>
     <a href="/challenges" class="btn" style="width:100%;text-align:center;margin-top:0.5rem;">Go to Challenges</a>
     <a href="/scoreboard" class="btn secondary" style="width:100%;text-align:center;margin-top:0.75rem;">View Leaderboard</a>
@@ -128,7 +128,7 @@
 </div>
 
 <div class="card">
-  <h2>🏆 Team Solves History</h2>
+  <h2>Team Solves History</h2>
   {% if solves %}
   <div class="table-wrap">
     <table>

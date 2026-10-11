@@ -3,7 +3,7 @@
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
-    <h1 style="margin:0;">🎯 Manage Challenges</h1>
+    <h1 style="margin:0;">Manage Challenges</h1>
     <div class="hint">Upload new challenges, toggle visibility, manage hints, and delete challenges.</div>
   </div>
   <div>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="card">
-  <h2>➕ Upload New Challenge</h2>
+  <h2>Upload New Challenge</h2>
   <form method="post" action="/admin/challenges/new?csrf_token={{ csrf_token }}" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
     <div class="grid-2">

@@ -3,7 +3,7 @@
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
-    <h1 style="margin:0;">⚙️ Admin Dashboard</h1>
+    <h1 style="margin:0;">Admin Dashboard</h1>
     <div class="hint" style="margin-top:0.35rem;">
       Signed in as <strong>{{ user.display_name }}</strong> (@{{ user.username }})
       {% if user.is_ferris %}
@@ -42,33 +42,33 @@
 
 <div class="grid">
   <div class="card interactive">
-    <h3>👥 Team Management</h3>
+    <h3>Team Management</h3>
     <p class="hint">Search teams, force-join/kick members, change captains, manual score adjustments, and locking.</p>
     <a href="/admin/teams" class="btn" style="width:100%;">Manage Teams →</a>
   </div>
 
   {% if user.is_ferris %}
   <div class="card interactive">
-    <h3>🌊 Round & Event Controls</h3>
+    <h3>Round &amp; Event Controls</h3>
     <p class="hint">Start event (Round 1), trigger next round, set time limits, or end current active round.</p>
     <a href="/admin/rounds" class="btn" style="width:100%;">Round Controls →</a>
   </div>
 
   <div class="card interactive">
-    <h3>🎯 Challenges & Hints</h3>
+    <h3>Challenges &amp; Hints</h3>
     <p class="hint">Upload challenges (ZIP streaming), configure categories, points, flags, hints, and toggles.</p>
     <a href="/admin/challenges" class="btn" style="width:100%;">Manage Challenges →</a>
   </div>
 
   <div class="card interactive">
-    <h3>🛡️ Admin Privileges</h3>
+    <h3>Admin Privileges</h3>
     <p class="hint">Grant or revoke administrator privileges to other registered college users.</p>
     <a href="/admin/admins" class="btn" style="width:100%;">Manage Admins →</a>
   </div>
   {% endif %}
 
   <div class="card interactive">
-    <h3>📜 Audit Log</h3>
+    <h3>Audit Log</h3>
     <p class="hint">View audit trail of all administrative actions, round triggers, and manual score adjustments.</p>
     <a href="/admin/audit" class="btn secondary" style="width:100%;">View Audit Log →</a>
   </div>

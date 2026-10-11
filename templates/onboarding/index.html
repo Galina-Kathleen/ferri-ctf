@@ -12,7 +12,7 @@
 
 <div class="grid-2">
   <div class="card">
-    <h2>🚀 Create a Room</h2>
+    <h2>Create a Room</h2>
     <p class="hint">Choose a team name. You will be the captain and receive an 8-character invite code to share with your teammate (max 2 members).</p>
     <form method="post" action="/team/create">
       <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="card">
-    <h2>🤝 Join Existing Room</h2>
+    <h2>Join Existing Room</h2>
     <p class="hint">Enter the 8-character code given by your captain. You can preview members before joining.</p>
     <form method="post" action="/team/join">
       <input type="hidden" name="csrf_token" value="{{ csrf_token }}">

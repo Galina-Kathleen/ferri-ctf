@@ -3,7 +3,7 @@
 {% block content %}
 <div class="grid-2">
   <div class="card">
-    <h2>👤 User Profile</h2>
+    <h2>User Profile</h2>
     <div style="margin-bottom:1rem;">
       <div class="hint">Display Name</div>
       <div style="font-size:1.2rem;font-weight:700;">{{ user.display_name }}</div>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="card">
-    <h2>🔒 Change Password</h2>
+    <h2>Change Password</h2>
     {% if error %}
       <div class="alert bad">{{ error }}</div>
     {% endif %}

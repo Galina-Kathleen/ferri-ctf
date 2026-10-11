@@ -24,7 +24,7 @@
 
 {% if is_between_rounds %}
 <div class="card center" style="padding: 3rem 1.5rem;">
-  <h2>⏸️ Round Inactive</h2>
+  <h2>Round Inactive</h2>
   <p class="hint" style="max-width:30rem;margin:0 auto 1.5rem;">
     There is no active round at the moment. Challenges and flag submissions are paused between rounds.
   </p>
@@ -53,12 +53,12 @@
     <div style="border-top:1px solid var(--line);padding-top:0.75rem;display:flex;justify-content:space-between;align-items:center;">
       <div>
         {% if c.is_solved %}
-          <span class="badge solved">✓ Solved</span>
+          <span class="badge solved">Solved</span>
         {% elif c.repeat_penalty > 0 %}
           <span class="hint" style="color:var(--bad);font-size:0.75rem;">-{{ c.repeat_penalty }} repeat penalty</span>
         {% endif %}
         {% if c.has_file %}
-          <span title="File attachment available" style="margin-left:0.35rem;font-size:0.85rem;">📁</span>
+          <span title="File attachment available" class="badge secondary" style="margin-left:0.35rem;font-size:0.75rem;">File</span>
         {% endif %}
       </div>
       <a href="/challenges/{{ c.id }}" class="btn {% if c.is_solved %}secondary{% endif %}" style="padding:0.4rem 0.8rem;font-size:0.85rem;">
