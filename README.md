@@ -1,4 +1,4 @@
-# FerrisCTF 🦀
+# FerrisCTF 
 
 A high-performance, self-contained Capture The Flag (CTF) platform built in **Rust** using **Axum**, **SQLx (SQLite)**, and **MiniJinja**.
 
@@ -6,7 +6,7 @@ Designed for resilience, security, and low operational complexity, FerrisCTF run
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **Team Management & Onboarding**: Self-service registration, join codes (Crockford Base32), team creation, member management, captain transfer, and automated locking.
 - **Dynamic Challenge Allocation**: Difficulty-based quota pooling per team (`Easy`, `Medium`, `Hard`) ensuring fair challenge distribution.
@@ -26,7 +26,7 @@ Designed for resilience, security, and low operational complexity, FerrisCTF run
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Language & Runtime**: Rust (2021 Edition), Tokio async runtime
 - **Web Framework**: Axum 0.7
@@ -36,7 +36,7 @@ Designed for resilience, security, and low operational complexity, FerrisCTF run
 
 ---
 
-## 📦 Prerequisites
+##  Prerequisites
 
 Ensure you have the following installed:
 - **Rust Toolchain** (1.75 or higher): Install via [rustup.rs](https://rustup.rs/)
@@ -49,7 +49,7 @@ cargo install sqlx-cli --no-default-features --features sqlite
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 FerrisCTF is configured using environment variables or a `.env` file in the working directory.
 
@@ -80,7 +80,7 @@ cp .env.example .env
 
 ---
 
-## 🏃 Running the Application
+##  Running the Application
 
 ### 1. Database Setup
 Database schema migrations run **automatically on application startup**. 
@@ -130,7 +130,7 @@ cargo check
 
 ---
 
-## 📁 Directory Structure
+##  Directory Structure
 
 ```
 ├── Documentation/            # Technical specification, progress notes, and README
@@ -169,6 +169,6 @@ cargo check
 
 ---
 
-## 📄 License
+##  License
 
 Internal / Proprietary contest software developed for FerrisCTF.
