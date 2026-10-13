@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Manage Challenges — FerrisCTF Admin{% endblock %}
+{% block title %}Manage Challenges — Nimbus 2000 Admin{% endblock %}
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
@@ -51,7 +51,8 @@
     </div>
 
     <label for="description">Description (Markdown / text)</label>
-    <textarea id="description" name="description" rows="4" required placeholder="Challenge description, background, and instructions..."></textarea>
+    <textarea id="description" name="description" rows="4" required
+      placeholder="Challenge description, background, and instructions..."></textarea>
 
     <button type="submit" style="margin-top:1rem;">Upload Challenge</button>
   </form>
@@ -90,48 +91,54 @@
       </thead>
       <tbody>
         {% if challenges %}
-          {% for c in challenges %}
-          <tr>
-            <td><strong>{{ c.title }}</strong></td>
-            <td>{{ c.category }}</td>
-            <td><span class="badge {{ c.difficulty }}">{{ c.difficulty }}</span></td>
-            <td><strong>{{ c.points }}</strong></td>
-            <td class="hint">{{ c.file_name | default("None", true) }}</td>
-            <td>
-              {% if c.is_active %}
-                <span class="badge easy">Active</span>
-              {% else %}
-                <span class="badge secondary">Inactive</span>
-              {% endif %}
-            </td>
-            <td>
-              <form method="post" action="/admin/challenges/{{ c.id }}/hints" style="display:flex;gap:0.35rem;align-items:center;">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-                <input name="content" type="text" placeholder="Hint text" style="padding:0.25rem 0.5rem;font-size:0.8rem;width:8rem;" required>
-                <input name="point_cost" type="number" placeholder="Cost" min="0" value="10" style="padding:0.25rem 0.5rem;font-size:0.8rem;width:4rem;" required>
-                <button type="submit" class="secondary" style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;">+Hint</button>
-              </form>
-            </td>
-            <td>
-              <form method="post" action="/admin/challenges/{{ c.id }}/toggle" class="inline">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-                <button type="submit" class="secondary" style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;">
-                  {% if c.is_active %}Deactivate{% else %}Activate{% endif %}
-                </button>
-              </form>
-              <form method="post" action="/admin/challenges/{{ c.id }}/delete" class="inline" style="margin-left:0.25rem;">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-                <button type="submit" class="danger" style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;" onclick="return confirm('Delete challenge {{ c.title }}? Deletion cascades to solves and changes scores!');">
-                  Delete
-                </button>
-              </form>
-            </td>
-          </tr>
-          {% endfor %}
+        {% for c in challenges %}
+        <tr>
+          <td><strong>{{ c.title }}</strong></td>
+          <td>{{ c.category }}</td>
+          <td><span class="badge {{ c.difficulty }}">{{ c.difficulty }}</span></td>
+          <td><strong>{{ c.points }}</strong></td>
+          <td class="hint">{{ c.file_name | default("None", true) }}</td>
+          <td>
+            {% if c.is_active %}
+            <span class="badge easy">Active</span>
+            {% else %}
+            <span class="badge secondary">Inactive</span>
+            {% endif %}
+          </td>
+          <td>
+            <form method="post" action="/admin/challenges/{{ c.id }}/hints"
+              style="display:flex;gap:0.35rem;align-items:center;">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+              <input name="content" type="text" placeholder="Hint text"
+                style="padding:0.25rem 0.5rem;font-size:0.8rem;width:8rem;" required>
+              <input name="point_cost" type="number" placeholder="Cost" min="0" value="10"
+                style="padding:0.25rem 0.5rem;font-size:0.8rem;width:4rem;" required>
+              <button type="submit" class="secondary"
+                style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;">+Hint</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="/admin/challenges/{{ c.id }}/toggle" class="inline">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+              <button type="submit" class="secondary" style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;">
+                {% if c.is_active %}Deactivate{% else %}Activate{% endif %}
+              </button>
+            </form>
+            <form method="post" action="/admin/challenges/{{ c.id }}/delete" class="inline"
+              style="margin-left:0.25rem;">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+              <button type="submit" class="danger" style="margin:0;padding:0.25rem 0.5rem;font-size:0.8rem;"
+                onclick="return confirm('Delete challenge {{ c.title }}? Deletion cascades to solves and changes scores!');">
+                Delete
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
         {% else %}
-          <tr>
-            <td colspan="8" class="center hint" style="padding: 2rem;">No challenges uploaded yet.</td>
-          </tr>
+        <tr>
+          <td colspan="8" class="center hint" style="padding: 2rem;">No challenges uploaded yet.</td>
+        </tr>
         {% endif %}
       </tbody>
     </table>

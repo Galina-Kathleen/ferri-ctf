@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Leaderboard — FerrisCTF{% endblock %}
+{% block title %}Leaderboard — Nimbus 2000{% endblock %}
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
@@ -35,9 +35,9 @@
       <tbody>
         {% if scoreboard %}
           {% for e in scoreboard %}
-          <tr {% if e.rank == 1 %}style="background:rgba(247, 76, 0, 0.08);"{% endif %}>
+          <tr {% if e.rank == 1 %}class="rank-1"{% elif e.rank == 2 %}class="rank-2"{% elif e.rank == 3 %}class="rank-3"{% endif %}>
             <td>
-              <strong style="font-size:1.1rem;{% if e.rank == 1 %}color:#f59e0b;{% elif e.rank == 2 %}color:#94a3b8;{% elif e.rank == 3 %}color:#b45309;{% endif %}">
+              <strong style="font-size:1.1rem;{% if e.rank == 1 %}color:var(--c-mauve);{% elif e.rank == 2 %}color:var(--c-sky);{% elif e.rank == 3 %}color:var(--c-pearl);{% endif %}">
                 #{{ e.rank }}
               </strong>
             </td>

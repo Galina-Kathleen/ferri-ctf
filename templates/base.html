@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}FerrisCTF{% endblock %}</title>
+  <title>{% block title %}Nimbus 2000{% endblock %}</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="/">FerrisCTF</a>
+    <a class="brand" href="/" aria-label="Nimbus 2000">
+      <span class="brand-name">Nimbus 2000</span>
+      <span class="brand-byline">nexus aws</span>
+    </a>
     <nav class="nav-links">
       <a href="/scoreboard">Leaderboard</a>
       {% if user %}
@@ -25,10 +28,21 @@
         </form>
       {% else %}
         <a href="/login">Log in</a>
-        <a href="/register" class="btn" style="padding:0.4rem 0.8rem;">Register</a>
+        <a href="/register" class="btn" style="padding:0.4rem 0.9rem;">Register</a>
       {% endif %}
     </nav>
   </header>
   <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-name">Nimbus 2000</span>
+        <span class="footer-pill">nexus aws</span>
+      </div>
+      <div class="footer-info">
+        <span>Capture The Flag Platform</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

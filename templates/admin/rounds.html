@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Round & Event Controls — FerrisCTF Admin{% endblock %}
+{% block title %}Round & Event Controls — Nimbus 2000 Admin{% endblock %}
 {% block content %}
 <div class="flex-between" style="margin-bottom: 1.5rem; flex-wrap:wrap; gap:1rem;">
   <div>
@@ -59,6 +59,7 @@
         <h3>Update Time Limit</h3>
         <form method="post" action="/admin/rounds/limit" style="margin-bottom:1rem;">
           <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+          <input type="hidden" name="action" value="limit">
           <input type="hidden" name="round_number" value="{{ active_round.round_number }}">
           <div style="display:flex;gap:0.5rem;">
             <input name="time_limit_minutes" type="number" min="1" placeholder="New limit (mins)" required style="flex:1;">
@@ -68,6 +69,7 @@
 
         <form method="post" action="/admin/rounds/end">
           <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+          <input type="hidden" name="action" value="end">
           <input type="hidden" name="round_number" value="{{ active_round.round_number }}">
           <button type="submit" class="danger" style="width:100%;margin:0;" onclick="return confirm('End Round {{ active_round.round_number }} immediately?');">
             End Round {{ active_round.round_number }} Now
@@ -78,6 +80,7 @@
       <div class="alert info">No round is currently active. The event is paused between rounds.</div>
       <form method="post" action="/admin/rounds/start">
         <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <input type="hidden" name="action" value="start">
         <label for="next_limit">Time Limit (Minutes, optional)</label>
         <input id="next_limit" name="time_limit_minutes" type="number" min="1" placeholder="e.g. 60">
         <button type="submit" style="width:100%;margin-top:1rem;">

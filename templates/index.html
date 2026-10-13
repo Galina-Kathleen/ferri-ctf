@@ -1,15 +1,41 @@
 {% extends "base.html" %}
-{% block title %}FerrisCTF{% endblock %}
+{% block title %}Nimbus 2000{% endblock %}
 {% block content %}
-<section class="card">
+<section class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span> nexus aws
+  </div>
   {% if user %}
-    <h1>Welcome, {{ user.display_name }}</h1>
-    <p>You are signed in as <strong>{{ user.username }}</strong>.</p>
-    <p class="hint">Team setup and challenges arrive in a later build step.</p>
+    <h1 class="hero-title">Welcome, {{ user.display_name }}</h1>
+    <p class="hero-desc">You are competing as <strong style="color:var(--fg-bright);">@{{ user.username }}</strong> on <strong>Nimbus 2000</strong>.</p>
+    <div class="hero-actions">
+      <a href="/challenges" class="btn btn-lg">View Challenges →</a>
+      <a href="/team" class="btn secondary btn-lg">Team Dashboard</a>
+      <a href="/scoreboard" class="btn secondary btn-lg">Leaderboard</a>
+    </div>
   {% else %}
-    <h1>FerrisCTF</h1>
-    <p>A capture-the-flag competition. Register with your college ID to take part.</p>
-    <p><a href="/register">Create an account</a> or <a href="/login">log in</a>.</p>
+    <h1 class="hero-title">Nimbus 2000</h1>
+    <p class="hero-desc">A premier capture-the-flag platform powered by nexus aws. Register with your college ID to take part, solve real-world challenges, and climb the ranks.</p>
+    <div class="hero-actions">
+      <a href="/register" class="btn btn-lg">Create Account</a>
+      <a href="/login" class="btn secondary btn-lg">Log In</a>
+      <a href="/scoreboard" class="btn secondary btn-lg">Live Leaderboard</a>
+    </div>
   {% endif %}
 </section>
+
+<div class="features-grid">
+  <div class="feature-card">
+    <h3>Wave Engine</h3>
+    <p>Dynamic round progression with synchronized release waves and automated countdown timers.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Team Synergy</h3>
+    <p>Form two-player tactical squads, manage room invites, and collaborate to conquer challenges.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Dynamic Scoring</h3>
+    <p>Progressive difficulty tiers, solved status tracking, hint unlock mechanics, and tie-break rules.</p>
+  </div>
+</div>
 {% endblock %}

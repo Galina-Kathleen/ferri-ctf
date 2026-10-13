@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ challenge.title }} — FerrisCTF{% endblock %}
+{% block title %}{{ challenge.title }} — Nimbus 2000{% endblock %}
 {% block content %}
 <div style="margin-bottom: 1rem;">
   <a href="/challenges" class="hint">← Back to Challenge Board</a>
@@ -56,7 +56,7 @@
       <form method="post" action="/challenges/{{ challenge.id }}/submit">
         <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <input name="flag" type="text" required placeholder="ferris{...}" style="flex:1;min-width:18rem;font-family:monospace;">
+          <input name="flag" type="text" required placeholder="nimbus{...}" style="flex:1;min-width:18rem;font-family:monospace;">
           <button type="submit" style="margin:0;">Submit</button>
         </div>
       </form>
